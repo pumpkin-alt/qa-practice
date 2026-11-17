@@ -1,29 +1,38 @@
 package Hotel;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@AllArgsConstructor
+
 public class BookingService {
-    private List<Room> rooms = new ArrayList<>();
+    private List<Room> rooms;
 
-    public BookingService(List<Room> rooms){
-        this.rooms = rooms;
+    public String format(Room room) {
+        return "Номер комнаты: " + room.getNumber() + "\nКласс: " + room.getComfort() + "\n";
     }
 
-    public List<Room> getRooms(){
-        return rooms;
-    }
-
-    public void getAllFreeRooms(){
-        for (Room room  : rooms) {
-           System.out.println(room.getFreeRoom());
+    public void printFreeRooms() {
+        for (Room room : rooms) {
+            if (room.isFree()) {
+                System.out.println(format(room));
+            }
         }
     }
 
-    public void getFreeRoomAtThisDay(LocalDate bookingDate){
-        for (Room name : rooms){
-           System.out.println(name.getFreeRoomOnThisDate(bookingDate));
+    public void printFreeRoomsOn(LocalDate bookingDate) {
+        LocalDate today = LocalDate.now();
+        if (bookingDate.isBefore(today)) {
+            throw new IllegalArgumentException("Неверная дата, выберите дату бронирование с " + today);
+        }
+        for (Room room : rooms) {
+            if (!room.isBusyOn(bookingDate)) {
+                System.out.println(format(room));
+            }
         }
     }
 

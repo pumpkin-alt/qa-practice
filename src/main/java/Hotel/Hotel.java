@@ -9,6 +9,5 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class Hotel {
-    private List<Room> rooms = new ArrayList<>();
-
+    private List<Room> rooms;
 }

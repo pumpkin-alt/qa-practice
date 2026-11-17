@@ -1,5 +1,8 @@
 package Hotel;
 
+import lombok.Getter;
+
+@Getter
 public class StandardRoom extends Room {
     private boolean breakfast;
 

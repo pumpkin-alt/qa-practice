@@ -10,42 +10,31 @@ import java.util.Set;
 
 public abstract class Room {
     private String number;
-    private Set<LocalDate> bookingDate = new HashSet<>();
+    private Set<LocalDate> bookingDate;
 
     public Room(String number) {
         this.number = number;
+        this.bookingDate = new HashSet<>();
     }
 
-     public abstract String getComfort();
+    public abstract String getComfort();
 
     public void book(LocalDate date) {
         LocalDate today = LocalDate.now();
         if (bookingDate.contains(date)) {
             throw new IllegalStateException("Номер уже забронирован, выбирите другую дату");
         } else if (date.isBefore(today)) {
-            throw new IllegalStateException("Неверная дата, выбирите дату бронирование с " + today);
+            throw new IllegalStateException("Неверная дата, выберите дату бронирование с " + today);
         } else {
             bookingDate.add(date);
         }
     }
 
-    public String getFreeRoom() {
-
-        if (bookingDate.isEmpty()) {
-            return "Номер комнаты - " + number + "\nКомфорт - " + getComfort();
-        }
-        return "";
+    public boolean isFree() {
+        return bookingDate.isEmpty();
     }
 
-    public String getFreeRoomOnThisDate(LocalDate bookingDate) {
-        LocalDate today = LocalDate.now();
-
-        if (bookingDate.isBefore(today)) {
-            throw new IllegalStateException("Неверная дата, выбирите дату бронирование с " + today);
-        }
-        if (!this.bookingDate.contains(bookingDate)) {
-            return "№ комнаты " + number;
-        }
-        return "";
+    public boolean isBusyOn(LocalDate date) {
+        return bookingDate.contains(date);
     }
 }

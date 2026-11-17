@@ -1,4 +1,6 @@
 package Hotel;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +23,11 @@ public class Run {
         BookingService room = new BookingService(rooms.getRooms());
 
 
-room.getAllFreeRooms();
+//        room.printFreeRoom();
 //        comfortRoom01.setBookingDate(LocalDate.of(2026, 12, 13));
-//        comfortRoom01.setBookingDate(LocalDate.of(2026, 12, 13));
+        comfortRoom01.book(LocalDate.of(2026, 12, 13));
 //
-//       room.getFreeRoomAtThisDay(LocalDate.of(2026, 12, 13));
+         room.printFreeRoomsOn(LocalDate.of(2026, 12, 13));
 
 
     }

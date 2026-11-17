@@ -10,15 +10,6 @@ public class ComfortRoom extends Room {
         super(number);
         this.breakfast = true;
     }
-
-    public String getFreeRoom() {
-
-        if (getBookingDate().isEmpty()) {
-            return "Номер комнаты - " + getNumber() + "\nКомфорт - " + getComfort() + "\n";
-        }
-        return "";
-    }
-
     @Override
     public String getComfort() {
         return "comfort";
