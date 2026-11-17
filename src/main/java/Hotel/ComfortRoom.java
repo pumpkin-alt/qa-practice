@@ -1,0 +1,24 @@
+package Hotel;
+
+public class ComfortRoom extends Room {
+    private boolean breakFeast;
+
+    public ComfortRoom(String number) {
+        super(number);
+        this.breakFeast = true;
+    }
+
+    public String getFreeRoom() {
+
+        if (getBookingDate().isEmpty()) {
+//            System.out.println("Номер комнаты - " + number + "\n Компфорт - " + comfort);
+            return "Номер комнаты - " + getNumber() + "\nКомфорт - " + getComfort() + "\n";
+        }
+        return "";
+    }
+
+    @Override
+    public  String getComfort() {
+        return "comfort";
+    }
+}
