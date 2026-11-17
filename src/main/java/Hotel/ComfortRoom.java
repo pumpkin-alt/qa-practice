@@ -4,11 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class ComfortRoom extends Room {
-    private boolean breakFeast;
+    private boolean breakfast;
 
     public ComfortRoom(String number) {
         super(number);
-        this.breakFeast = true;
+        this.breakfast = true;
     }
 
     public String getFreeRoom() {

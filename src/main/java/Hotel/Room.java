@@ -16,9 +16,9 @@ public abstract class Room {
         this.number = number;
     }
 
-    abstract public String getComfort();
+     public abstract String getComfort();
 
-    public void setBookingDate(LocalDate date) {
+    public void book(LocalDate date) {
         LocalDate today = LocalDate.now();
         if (bookingDate.contains(date)) {
             throw new IllegalStateException("Номер уже забронирован, выбирите другую дату");

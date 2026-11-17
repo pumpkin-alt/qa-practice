@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SystemBooking {
+public class BookingService {
     private List<Room> rooms = new ArrayList<>();
 
-    public SystemBooking(List<Room> rooms){
+    public BookingService(List<Room> rooms){
         this.rooms = rooms;
     }
 
@@ -16,8 +16,8 @@ public class SystemBooking {
     }
 
     public void getAllFreeRooms(){
-        for (Room name  : rooms) {
-           System.out.println(name.getFreeRoom());
+        for (Room room  : rooms) {
+           System.out.println(room.getFreeRoom());
         }
     }
 
