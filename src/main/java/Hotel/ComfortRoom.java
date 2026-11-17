@@ -11,7 +11,6 @@ public class ComfortRoom extends Room {
     public String getFreeRoom() {
 
         if (getBookingDate().isEmpty()) {
-//            System.out.println("Номер комнаты - " + number + "\n Компфорт - " + comfort);
             return "Номер комнаты - " + getNumber() + "\nКомфорт - " + getComfort() + "\n";
         }
         return "";

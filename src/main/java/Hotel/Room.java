@@ -32,7 +32,6 @@ public abstract class Room {
     public String getFreeRoom() {
 
         if (bookingDate.isEmpty()) {
-//            System.out.println("Номер комнаты - " + number + "\n Компфорт - " + comfort);
             return "Номер комнаты - " + number + "\nКомфорт - " + getComfort();
         }
         return "";
