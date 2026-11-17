@@ -3,11 +3,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Run {
     public static void main(String[] args) {
         ComfortRoom comfortRoom01 = new ComfortRoom("C01");
         ComfortRoom comfortRoom02 = new ComfortRoom("C02");
         StandartRoom standartRoom01 = new StandartRoom("S02");
+        Room room1 = new ComfortRoom("1");
 
         List<Room> roomsList = new ArrayList<>();
 

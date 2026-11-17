@@ -1,17 +1,14 @@
 package Hotel;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@AllArgsConstructor
 public class Hotel {
     private List<Room> rooms = new ArrayList<>();
-
-    public Hotel(List<Room> rooms){
-       this.rooms = rooms;
-    }
-
-    public List<Room> getRooms(){
-       return rooms;
-    }
 
 }

@@ -1,5 +1,8 @@
 package Hotel;
 
+import lombok.Getter;
+
+@Getter
 public class ComfortRoom extends Room {
     private boolean breakFeast;
 
@@ -17,7 +20,7 @@ public class ComfortRoom extends Room {
     }
 
     @Override
-    public  String getComfort() {
+    public String getComfort() {
         return "comfort";
     }
 }

@@ -1,8 +1,12 @@
 package Hotel;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+
+@Getter
 
 public abstract class Room {
     private String number;
@@ -12,15 +16,11 @@ public abstract class Room {
         this.number = number;
     }
 
-    public String getNumber() {
-        return number;
-    }
+    abstract public String getComfort();
 
-    abstract public  String getComfort();
-
-    public void setBookingDate(LocalDate date){
+    public void setBookingDate(LocalDate date) {
         LocalDate today = LocalDate.now();
-        if (bookingDate.contains(date)){
+        if (bookingDate.contains(date)) {
             throw new IllegalStateException("Номер уже забронирован, выбирите другую дату");
         } else if (date.isBefore(today)) {
             throw new IllegalStateException("Неверная дата, выбирите дату бронирование с " + today);
@@ -37,21 +37,15 @@ public abstract class Room {
         return "";
     }
 
-    public String getFreeRoomOnThisDate(LocalDate bookingDate){
+    public String getFreeRoomOnThisDate(LocalDate bookingDate) {
         LocalDate today = LocalDate.now();
 
-        if (bookingDate.isBefore(today)){
+        if (bookingDate.isBefore(today)) {
             throw new IllegalStateException("Неверная дата, выбирите дату бронирование с " + today);
         }
-        if (!this.bookingDate.contains(bookingDate)){
+        if (!this.bookingDate.contains(bookingDate)) {
             return "№ комнаты " + number;
         }
-
         return "";
     }
-
-    public Set<LocalDate> getBookingDate(){
-        return bookingDate;
-    }
-
 }
