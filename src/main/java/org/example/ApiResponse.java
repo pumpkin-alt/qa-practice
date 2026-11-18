@@ -3,7 +3,7 @@ package org.example;
 import lombok.*;
 
 @AllArgsConstructor
-//@Data
+@Data
 public class ApiResponse {
     int statusCode;
     String body;
@@ -16,6 +16,7 @@ public class ApiResponse {
 
         response1.toString();
         System.out.println(response1);
+        System.out.println(response1.equals(response2));
 
     }
 
