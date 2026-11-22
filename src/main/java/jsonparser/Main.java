@@ -1,13 +1,14 @@
-package JSON;
+package jsonparser;
 
-import JSON.model.Ip;
-import JSON.parser.ConsoleParser;
-import JSON.parser.ExecutorParser;
-import JSON.parser.FileParser;
+import jsonparser.parser.ConsoleParser;
+import jsonparser.parser.ExecutorParser;
+import jsonparser.parser.FileParser;
 
 public class Main {
     public static void main(String[] args) {
-        Ip outPutIp = new Ip("https://api.ipify.org/?format=json");
+        DocumentDecoder outPutIp = new DocumentDecoder("https://api.ipify.org/?format=json");
+
+
 
         ExecutorParser jsonParse = new ExecutorParser(outPutIp);
 

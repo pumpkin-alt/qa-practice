@@ -1,4 +1,4 @@
-package Hotel;
+package Hotel.room;
 
 import lombok.Getter;
 

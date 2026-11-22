@@ -1,5 +1,6 @@
-package Hotel;
+package Hotel.servise;
 
+import Hotel.room.Room;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

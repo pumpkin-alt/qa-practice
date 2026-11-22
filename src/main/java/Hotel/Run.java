@@ -1,5 +1,10 @@
 package Hotel;
 
+import Hotel.room.ComfortRoom;
+import Hotel.room.Room;
+import Hotel.room.StandardRoom;
+import Hotel.servise.BookingService;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
